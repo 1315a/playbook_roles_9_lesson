@@ -1,0 +1,23 @@
+---
+# tasks file for build_server
+- name: install packages
+  apt: name={{item}} state=present
+  with_items:
+       - maven
+       - git
+       - default-jdk
+
+- name: git clone 
+  git:
+    repo: "{{repo_url}}"
+    dest: "{{repo_folder}}"          
+    clone: yes
+- name: running maven
+  shell:
+    cmd: "mvn package"
+    chdir: "{{repo_folder}}" 
+- name: copy war
+  synchronize:
+    mode: pull 
+    src: "{{war_folder}}"
+    dest: "{{tmp_fold}}"

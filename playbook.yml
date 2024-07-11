@@ -1,0 +1,16 @@
+---
+
+- name: build_server
+  hosts: prod
+  become: yes
+  
+  roles:
+   - build_server
+
+
+- name: deploy_server
+  hosts: prod
+  become: yes
+  
+  roles: 
+   - deploy_server

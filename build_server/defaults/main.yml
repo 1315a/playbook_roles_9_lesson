@@ -1,0 +1,6 @@
+---
+# defaults file for build_server
+war_folder: /test/target/hello-1.0.war
+repo_url: https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
+repo_folder: /test/
+tmp_fold: /tmp/

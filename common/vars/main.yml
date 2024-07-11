@@ -1,0 +1,6 @@
+---
+# vars file for common
+build_server:
+  ansible_host: 158.160.178.102
+deploy_server:
+  ansible_host: 158.160.177.154
